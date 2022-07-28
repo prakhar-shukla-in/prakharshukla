@@ -10,12 +10,7 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 
-import project1 from "../images/html-css-javascript-lg.jpg";
-import project2 from "../images/html-css-javascript.jpg";
-import project3 from "../images/javascript-fullstack.jpg";
-import project4 from "../images/mern-stack.jpg";
-import project5 from "../images/react-redux.jpg";
-import project6 from "../images/react.png";
+import project1 from "../images/project1.png";
 
 const useStyles = makeStyles((theme) => ({
   mainContainer: {
@@ -43,7 +38,7 @@ const projects = [
     consequatur magni quod nesciunt necessitatibus molestiae non\
     eligendi, magnam est aliquam recusandae? Magnam soluta minus\
     iste alias sunt veritatis nisi dolores!`,
-    image: project2,
+    image: project1,
   },
   {
     name: "Project 3",
@@ -51,7 +46,7 @@ const projects = [
     consequatur magni quod nesciunt necessitatibus molestiae non\
     eligendi, magnam est aliquam recusandae? Magnam soluta minus\
     iste alias sunt veritatis nisi dolores!`,
-    image: project3,
+    image: project1,
   },
   {
     name: "Project 4",
@@ -59,7 +54,7 @@ const projects = [
     consequatur magni quod nesciunt necessitatibus molestiae non\
     eligendi, magnam est aliquam recusandae? Magnam soluta minus\
     iste alias sunt veritatis nisi dolores!`,
-    image: project4,
+    image: project1,
   },
   {
     name: "Project 5",
@@ -67,7 +62,7 @@ const projects = [
     consequatur magni quod nesciunt necessitatibus molestiae non\
     eligendi, magnam est aliquam recusandae? Magnam soluta minus\
     iste alias sunt veritatis nisi dolores!`,
-    image: project5,
+    image: project1,
   },
   {
     name: "Project 6",
@@ -75,7 +70,7 @@ const projects = [
     consequatur magni quod nesciunt necessitatibus molestiae non\
     eligendi, magnam est aliquam recusandae? Magnam soluta minus\
     iste alias sunt veritatis nisi dolores!`,
-    image: project6,
+    image: project1,
   },
 ];
 

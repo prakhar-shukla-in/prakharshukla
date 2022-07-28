@@ -2,6 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
+import Chip from "@material-ui/core/Chip";
 
 const useStyles = makeStyles((theme) => ({
   mainContainer: {
@@ -71,7 +72,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     maxWidth: "9.375rem",
     margin: "0 3rem 0 auto",
-    fontSize: "1.8rem",
+    fontSize: "1.4rem",
     color: "#fff",
     background: "tomato",
     lineHeight: 1,
@@ -107,127 +108,162 @@ const useStyles = makeStyles((theme) => ({
   subtitle1: {
     color: "tan",
   },
+  chip: {
+    display: 'flex',
+    justifyContent: 'left',
+    flexWrap: 'wrap',
+    '& > *': {
+      margin: 1,
+    },
+  },
+  chip1: {
+    color: "tan",
+    background: "#595959",
+  },
 }));
 
 const Resume = () => {
   const classes = useStyles();
   return (
     <Box component="header" className={classes.mainContainer}>
-      <Typography variant="h4" align="center" className={classes.heading}>
-        Working Experience
+      <Typography variant="h3" align="left" className={classes.heading}>
+        Work Experience
       </Typography>
       <Box component="div" className={classes.timeLine}>
         <Typography
           variant="h2"
           className={`${classes.timeLineYear} ${classes.timeLineItem}`}
         >
-          2013
+          Aug 2020
         </Typography>
         <Box component="div" className={classes.timeLineItem}>
           <Typography
             variant="h5"
-            align="center"
             className={classes.subHeading}
+            align="left"
           >
-            web design
+            Systems Software Engineer
           </Typography>
-          <Typography variant="body1" align="center" className={classes.body1}>
-            company name where worked
+          <Typography align="left" variant="h5" className={classes.body1}>
+            NVIDIA - Bangalore, Pune
+          </Typography>
+          <Typography align="left" variant="caption" className={classes.body1}>
+            Aug 2020 - Present
+          </Typography>
+          <br />
+          <br />
+          <Typography align="left" variant="body1" className={classes.body1}>
+            VMS - Video Management System
           </Typography>
           <Typography
             variant="subtitle1"
-            align="center"
+            align="left"
             className={classes.subtitle1}
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero quas
-            ipsa, laudantium totam perferendis possimus voluptatibus tenetur.
-            Quasi voluptatibus, nam vitae eaque ad, officia laboriosam
-            repudiandae, rerum necessitatibus nisi mollitia.
+            Developed multiple features and APIs of VMS from POC, MVP to alpha release.
           </Typography>
+          <div className={classes.chip}>
+            <Chip label="C++" variant="default" className={classes.chip1} />
+            <Chip label="Python" variant="default" className={classes.chip1} />
+            <Chip label="Kubernetes" variant="default" className={classes.chip1} />
+            <Chip label="Docker" variant="default" className={classes.chip1} />
+            <Chip label="Helm" variant="default" className={classes.chip1} />
+            <Chip label="WebRTC" variant="default" className={classes.chip1} />
+            <Chip label="HLS" variant="default" className={classes.chip1} />
+            <Chip label="React JS" variant="default" className={classes.chip1} />
+            <Chip label="Javascript" variant="default" className={classes.chip1} />
+          </div>
+          <br />
+          <Typography align="left" variant="body1" className={classes.body1}>
+            Tokkio
+          </Typography>
+          <Typography
+            variant="subtitle1"
+            align="left"
+            className={classes.subtitle1}
+          >
+            Developed UI and APIs for Tokkio, a smart AI-powered self-service kiosk
+          </Typography>
+          <div className={classes.chip}>
+            <Chip label="Python" variant="default" className={classes.chip1} />
+            <Chip label="Kubernetes" variant="default" className={classes.chip1} />
+            <Chip label="Docker" variant="default" className={classes.chip1} />
+            <Chip label="Websockets" variant="default" className={classes.chip1} />
+            <Chip label="WebRTC" variant="default" className={classes.chip1} />
+            <Chip label="React JS" variant="default" className={classes.chip1} />
+            <Chip label="Javascript" variant="default" className={classes.chip1} />
+          </div>
         </Box>
         <Typography
           variant="h2"
           className={`${classes.timeLineYear} ${classes.timeLineItem}`}
         >
-          2014
+          Jan 2020
         </Typography>
         <Box component="div" className={classes.timeLineItem}>
           <Typography
             variant="h5"
-            align="center"
+            align="left"
             className={classes.subHeading}
           >
-            html & css
+            Software Intern
           </Typography>
-          <Typography variant="body1" align="center" className={classes.body1}>
-            company name where worked
+          <Typography variant="h6" align="left" className={classes.body1}>
+            NVIDIA - Bangalore
+          </Typography>
+          <Typography align="left" variant="caption" className={classes.body1}>
+            Jan 2020 - Jun 2020
+          </Typography>
+          <br />
+          <br />
+          <Typography align="left" variant="body1" className={classes.body1}>
+            Rule engine
           </Typography>
           <Typography
             variant="subtitle1"
-            align="center"
+            align="left"
             className={classes.subtitle1}
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero quas
-            ipsa, laudantium totam perferendis possimus voluptatibus tenetur.
-            Quasi voluptatibus, nam vitae eaque ad, officia laboriosam
-            repudiandae, rerum necessitatibus nisi mollitia.
+            Developed POC rules engine or hybrid reasoning system for Nvidia System Mangement
           </Typography>
+          <div className={classes.chip}>
+            <Chip label="Go" variant="default" className={classes.chip1} />
+            <Chip label="Compiler Design" variant="default" className={classes.chip1} />
+            <Chip label="Context free grammar" variant="default" className={classes.chip1} />
+          </div>
         </Box>
         <Typography
           variant="h2"
           className={`${classes.timeLineYear} ${classes.timeLineItem}`}
         >
-          2015
+          Aug 2018
         </Typography>
         <Box component="div" className={classes.timeLineItem}>
           <Typography
             variant="h5"
-            align="center"
+            align="left"
             className={classes.subHeading}
           >
-            Fullstack Javascript
+            Teaching assistant
           </Typography>
-          <Typography variant="body1" align="center" className={classes.body1}>
-            company name where worked
+          <Typography variant="body1" align="left" className={classes.body1}>
+            BITS Pilani KK Birla Goa Campus
           </Typography>
+          <Typography align="left" variant="caption" className={classes.body1}>
+            Aug 2018 - Jan 2020
+          </Typography>
+          <br />
           <Typography
             variant="subtitle1"
-            align="center"
+            align="left"
             className={classes.subtitle1}
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero quas
-            ipsa, laudantium totam perferendis possimus voluptatibus tenetur.
-            Quasi voluptatibus, nam vitae eaque ad, officia laboriosam
-            repudiandae, rerum necessitatibus nisi mollitia.
+            Conducted computer programming labs and doubt clearing sessions
           </Typography>
-        </Box>
-        <Typography
-          variant="h2"
-          className={`${classes.timeLineYear} ${classes.timeLineItem}`}
-        >
-          2017
-        </Typography>
-        <Box component="div" className={classes.timeLineItem}>
-          <Typography
-            variant="h5"
-            align="center"
-            className={classes.subHeading}
-          >
-            Django & React
-          </Typography>
-          <Typography variant="body1" align="center" className={classes.body1}>
-            company name where worked
-          </Typography>
-          <Typography
-            variant="subtitle1"
-            align="center"
-            className={classes.subtitle1}
-          >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero quas
-            ipsa, laudantium totam perferendis possimus voluptatibus tenetur.
-            Quasi voluptatibus, nam vitae eaque ad, officia laboriosam
-            repudiandae, rerum necessitatibus nisi mollitia.
-          </Typography>
+          <div className={classes.chip}>
+            <Chip label="C++" variant="default" className={classes.chip1} />
+            <Chip label="OOPs" variant="default" className={classes.chip1} />
+          </div>
         </Box>
       </Box>
     </Box>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
 import TextField from "@material-ui/core/TextField";
@@ -63,39 +63,53 @@ const InputField = withStyles({
 
 const Contact = () => {
   const classes = useStyles();
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+  const handleOnClick = () => {
+    window.open(`mailto:prakhars144@gmail.com?subject=${subject}&body=${message}`)
+  }
+  const handleSubjectChange = (event) => {
+    setSubject(event.target.value);
+  }
+  const handleMessageChange = (event) => {
+    setMessage(event.target.value);
+  }
   return (
     <Box component="div" className={classes.contactContainer}>
       <Grid container justify="center">
         <Box component="form" className={classes.form}>
           <Typography variant="h5" className={classes.heading}>
-            Hire or Contact me...
+            Contact me...
           </Typography>
-          <InputField
-            fullWidth={true}
-            label="Name"
-            variant="outlined"
-            inputProps={{ className: classes.input }}
-          />
-          <InputField
-            fullWidth={true}
-            label="Email"
-            variant="outlined"
-            inputProps={{ className: classes.input }}
-            className={classes.field}
-          />
-          <InputField
-            fullWidth={true}
-            label="Message"
-            variant="outlined"
-            multiline
-            rows={4}
-            inputProps={{ className: classes.input }}
-          />
+          <Grid item style={{ marginBottom: 10 }}>
+            <InputField
+              fullWidth={true}
+              value={subject}
+              label="Subject"
+              variant="outlined"
+              sx={{ marginBottom: 5 }}
+              inputProps={{ className: classes.input }}
+              onChange={(e) => { handleSubjectChange(e) }}
+            />
+          </Grid>
+          <Grid item>
+            <InputField
+              fullWidth={true}
+              label="Message"
+              variant="outlined"
+              multiline
+              value={message}
+              rows={4}
+              inputProps={{ className: classes.input }}
+              onChange={handleMessageChange}
+            />
+          </Grid>
           <Button
             variant="outlined"
             fullWidth={true}
             endIcon={<Send />}
             className={classes.button}
+            onClick={handleOnClick}
           >
             Contact Me
           </Button>
