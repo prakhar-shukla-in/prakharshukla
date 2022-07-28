@@ -47,13 +47,8 @@ const Header = () => {
         <Typed
           strings={[
             "Systems Software Engineer",
-            "Backend Engineer",
-            "Software Developer",
-            "Software Engineer"
           ]}
           typeSpeed={40}
-          backSpeed={50}
-          loop
         />
       </Typography>
     </Box>
