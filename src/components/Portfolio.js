@@ -8,6 +8,7 @@ import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
+import Typed from "react-typed";
 import Typography from "@material-ui/core/Typography";
 
 import project1 from "../images/project1.png";
@@ -20,6 +21,12 @@ const useStyles = makeStyles((theme) => ({
   cardContainer: {
     maxWidth: 345,
     margin: "3rem auto",
+  },
+  heading: {
+    color: "tomato",
+    padding: "3rem 0",
+    textTransform: "uppercase",
+    marginLeft: 15,
   },
 }));
 
@@ -78,6 +85,14 @@ const Portfolio = () => {
   const classes = useStyles();
   return (
     <Box component="div" className={classes.mainContainer}>
+      <Typography variant="h3" align="left" className={classes.heading}>
+        <Typed
+          strings={[
+            "Projects",
+          ]}
+          typeSpeed={40}
+        />
+      </Typography>
       <Grid container justify="center">
         {/* Projects */}
         {projects.map((project, i) => (

@@ -5,7 +5,7 @@ import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
-
+import Typed from "react-typed";
 import Send from "@material-ui/icons/Send";
 
 const useStyles = makeStyles((theme) => ({
@@ -79,7 +79,13 @@ const Contact = () => {
       <Grid container justify="center">
         <Box component="form" className={classes.form}>
           <Typography variant="h5" className={classes.heading}>
-            Contact me...
+            <Typed
+              strings={[
+                "Contact me...",
+              ]}
+              typeSpeed={40}
+            />
+
           </Typography>
           <Grid item style={{ marginBottom: 10 }}>
             <InputField

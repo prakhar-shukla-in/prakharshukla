@@ -10,9 +10,18 @@ const useStyles = makeStyles({
   bottomNavContainer: {
     background: "#222",
   },
-  root: {
+  active: {
     "& .MuiSvgIcon-root": {
       fill: "tan",
+      "&:hover": {
+        fill: "tomato",
+        fontSize: "1.8rem",
+      },
+    },
+  },
+  disabled: {
+    "& .MuiSvgIcon-root": {
+      fill: "grey",
       "&:hover": {
         fill: "tomato",
         fontSize: "1.8rem",
@@ -28,9 +37,9 @@ const Footer = () => {
   }
   return (
     <BottomNavigation className={classes.bottomNavContainer}>
-      <BottomNavigationAction icon={<Facebook />} className={classes.root} disabled />
-      <BottomNavigationAction icon={<Instagram />} className={classes.root} disabled />
-      <BottomNavigationAction icon={<LinkedInIcon />} className={classes.root} onClick={handleLinkedinClick} />
+      <BottomNavigationAction icon={<Facebook />} className={classes.disabled} disabled />
+      <BottomNavigationAction icon={<Instagram />} className={classes.disabled} disabled />
+      <BottomNavigationAction icon={<LinkedInIcon />} className={classes.active} onClick={handleLinkedinClick} />
     </BottomNavigation>
   );
 };

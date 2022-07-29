@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import Chip from "@material-ui/core/Chip";
+import Typed from "react-typed";
 
 const useStyles = makeStyles((theme) => ({
   mainContainer: {
@@ -96,6 +97,7 @@ const useStyles = makeStyles((theme) => ({
     color: "tomato",
     padding: "3rem 0",
     textTransform: "uppercase",
+    marginLeft: 15,
   },
   subHeading: {
     color: "#fff",
@@ -127,7 +129,12 @@ const Resume = () => {
   return (
     <Box component="header" className={classes.mainContainer}>
       <Typography variant="h3" align="left" className={classes.heading}>
-        Work Experience
+        <Typed
+          strings={[
+            "Work Experience",
+          ]}
+          typeSpeed={40}
+        />
       </Typography>
       <Box component="div" className={classes.timeLine}>
         <Typography
