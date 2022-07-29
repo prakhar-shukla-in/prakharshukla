@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import Drawer from "@material-ui/core/Drawer";
 import Box from "@material-ui/core/Box";
@@ -17,10 +17,10 @@ import MenuOpenIcon from "@material-ui/icons/MenuOpen";
 import AssignmentInd from "@material-ui/icons/AssignmentInd";
 import Home from "@material-ui/icons/Home";
 import Apps from "@material-ui/icons/Apps";
+import PublicIcon from '@material-ui/icons/Public';
 import ContactMail from "@material-ui/icons/ContactMail";
 import { makeStyles } from "@material-ui/core/styles";
 import avatar from "../avatar.png";
-
 import Footer from "../components/Footer";
 
 const useStyles = makeStyles((theme) => ({
@@ -54,14 +54,35 @@ const menuItems = [
   { listIcon: <Home />, listText: "Home", listPath: "/" },
   { listIcon: <AssignmentInd />, listText: "Resume", listPath: "/resume" },
   { listIcon: <Apps />, listText: "Portfolio", listPath: "/portfolio" },
+  { listIcon: <PublicIcon />, listText: "My Footprints", listPath: "/map" },
   { listIcon: <ContactMail />, listText: "Contact", listPath: "/contact" },
 ];
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-
   const classes = useStyles();
-
+  const audioRef = useRef();
+  const handleOnListClick = (item) => {
+    if (item === "My Footprints") {
+      try {
+        audioRef.current = new Audio("./freshness.mp3");
+        audioRef.current.play();
+      } catch (error) {
+        console.log("Failed to play audio", error);
+      }
+    }
+    else {
+      if (audioRef.current) {
+        try {
+          audioRef.current.pause();
+          audioRef.current.srcObject = null;
+          audioRef.current = null;
+        } catch (error) {
+          console.log("Failed to stop audio", error);
+        }
+      }
+    }
+  }
   const sideList = () => (
     <Box className={classes.menuSliderContainer} component="div">
       <IconButton onClick={() => setOpen(false)}>
@@ -75,7 +96,7 @@ const Navbar = () => {
             button
             key={i}
             className={classes.listItem}
-            onClick={() => setOpen(false)}
+            onClick={() => { setOpen(false); handleOnListClick(item.listText); }}
             component={Link}
             to={item.listPath}
           >
@@ -92,7 +113,7 @@ const Navbar = () => {
   return (
     <React.Fragment>
       <Box component="nav">
-        <AppBar position="static" className={classes.appbar}>
+        <AppBar position="static" className={classes.appbar} id="nav-bar-resp">
           <Toolbar>
             <IconButton onClick={() => setOpen(true)}>
               <MenuIcon className={classes.arrow} />
